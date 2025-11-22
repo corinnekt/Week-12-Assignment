@@ -1,11 +1,6 @@
 {
   "book": [
     {
-      "id": 1,
-      "title": "V.",
-      "author": "Thomas Pynchon"
-    },
-    {
       "id": 2,
       "title": "The Crying of Lot 49",
       "author": "Thomas Pynchon"
@@ -114,6 +109,11 @@
       "title": "Restricted Data",
       "author": "Alex Wellerstein",
       "id": 23
+    },
+    {
+      "title": "V.",
+      "author": "Thomas Pynchon",
+      "id": 24
     }
   ],
   "reviews": [
