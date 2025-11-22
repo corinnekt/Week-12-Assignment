@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Changed browser name-->
+    <title>Reading List</title>
+    <!--linked the bootstrap style sheet-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--linked the css style sheet-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--Make a container to control the alignment and styling of the heading-->
+    <div class="container mt-5" id="reading-list">
+        <!--played around with css headings styles-->
+        <h1 class="display-4">
+            Reading List
+            <!--placed the fetch button next to the reading list heading and styled it with bootstrap-->
+            <button type="button" onclick="onFetchBooksClick()" class="btn btn-outline-success m-5">Fetch Books</button>
+        </h1>
+    </div>
+
+    <!--made a container for the form to distinguish it from the header and book list to more easily target it in Javascript-->
+    <div class="container mb-5">
+        <!--Had to give the form an id to reference with the Javascript function to add the text input to the json-server database-->
+        <form id="add-book">
+            <!--hid the title and Author lables for asethics because I only wanted them to show up inside the input box-->
+            <label for="book-title" style="display: none">Title</label>
+            <input type="text" id="book-title" name="book" placeholder="Title">
+            <br>
+            <label for="author-name" style="display: none">Author</label>
+            <input type="text" id="author-name" name="author" placeholder="Author">
+            <br>
+            <!--the 'add book'button serves the create/post function to add new books to the sata array-->
+            <button type="button" onclick="onCreateBookClick()" class="btn btn-outline-primary mt-1">Add Book</button>
+        </form>
+    </div>
+
+    <!--Needed to be able to reference delete and add review buttons in the javascript, but I didn't want them to show up until each book in the book list did-->
+    <div class="container mt-5" id="button-container">
+        <!--The buttons needed to be given th type "button" so they behaved corectly with the delete and update js functions. They each had to be given special add-btn class and delete-btn class to be able to specifically target them to display them along with the book  list-->
+        <button type="button" onclick="onUpdateBookClick()" class="btn btn-outline-info add-btn">Add Review</button>
+        <button type="button" onclick="onDeleteBookClick()" class="btn btn-outline-danger delete-btn">Delete Book</button>
+    </div>
+    
+    <!--created the books container id to allow the fetch funtion to know where to put the reading list data-->
+    <div class="container mb-5" id="books-container"></div>
+    <script src="index.js"></script>
+</body>
+</html>
